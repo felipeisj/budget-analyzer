@@ -746,6 +746,90 @@ async def test_multiple_extract_only(pdfFiles: List[UploadFile] = File(...)):
 
 
 
+@router.post("/pdf/validate")
+async def validate_pdf_extraction(
+    pdfFile: UploadFile = File(...)
+):
+    """
+    Valida extracción de PDF antes del análisis completo.
+    Útil para verificar si el documento se puede procesar correctamente.
+    """
+    if not pdfFile.filename.lower().endswith('.pdf'):
+        raise HTTPException(status_code=400, detail="Solo archivos PDF")
+    
+    try:
+        content = await pdfFile.read()
+        temp_path = await save_temp_file(content, "validation", ".pdf")
+        
+        # Usar tu extractor existente
+        extracted = await extract_pdf_content(temp_path)
+        
+        # Análisis de calidad de extracción
+        quality_score = _calculate_extraction_quality(extracted)
+        
+        return {
+            "filename": pdfFile.filename,
+            "file_size_mb": round(len(content) / 1024 / 1024, 2),
+            "extraction_quality": {
+                "score": quality_score,
+                "text_length": len(extracted.get("text_content", "")),
+                "tables_found": len(extracted.get("tables", [])),
+                "budget_items_found": len(extracted.get("budget_items", [])),
+                "methods_used": extracted.get("extraction_metadata", {}).get("methods_used", []),
+                "confidence": extracted.get("extraction_metadata", {}).get("confidence_score", 0)
+            },
+            "recommendations": _get_processing_recommendations(quality_score),
+            "sample_content": {
+                "text_preview": extracted.get("text_content", "")[:500],
+                "budget_items_preview": extracted.get("budget_items", [])[:3]
+            }
+        }
+        
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Error validando PDF: {str(e)}")
+    finally:
+        await cleanup_temp_file("validation")
+
+def _calculate_extraction_quality(extracted_content: Dict) -> int:
+    """Calcula score de calidad de extracción."""
+    score = 0
+    
+    text_length = len(extracted_content.get("text_content", ""))
+    if text_length > 5000: score += 30
+    elif text_length > 1000: score += 20
+    elif text_length > 100: score += 10
+    
+    tables_count = len(extracted_content.get("tables", []))
+    score += min(20, tables_count * 5)
+    
+    items_count = len(extracted_content.get("budget_items", []))
+    score += min(25, items_count * 3)
+    
+    methods_used = extracted_content.get("extraction_metadata", {}).get("methods_used", [])
+    if len(methods_used) > 1: score += 15
+    elif len(methods_used) == 1: score += 10
+    
+    confidence = extracted_content.get("extraction_metadata", {}).get("confidence_score", 0)
+    score += min(10, confidence // 10)
+    
+    return min(100, score)
+
+def _get_processing_recommendations(quality_score: int) -> List[str]:
+    """Genera recomendaciones basadas en calidad de extracción."""
+    
+    recommendations = []
+    
+    if quality_score >= 80:
+        recommendations.append("Excelente calidad - Proceder con análisis completo")
+    elif quality_score >= 60:
+        recommendations.append("Buena calidad - Análisis recomendado")
+    elif quality_score >= 40:
+        recommendations.append("Calidad media - Considerar análisis manual adicional")
+    else:
+        recommendations.append("Baja calidad - Se recomienda verificación manual")
+        recommendations.append("Considerar usar OCR o convertir a texto editable")
+    
+    return recommendations
 
 if __name__ == "__main__":
     print("Budget Analysis endpoints loaded successfully!")
