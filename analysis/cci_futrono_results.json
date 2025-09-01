@@ -1,1 +1,109 @@
-{"analysisId":"mop_analysis_20250829_154805_8","analysis":{"analysisId":"basic_20250829_154805","analysis":{"resumen_ejecutivo":"Análisis básico generado a partir de la extracción de datos. El análisis completo con IA no estuvo disponible.","presupuesto_estimado":{"total_clp":718998624.0,"materials_percentage":45,"labor_percentage":30,"equipment_percentage":25,"overhead_percentage":35},"proyecto_info":{"nombre":"XII, COMUNAS DE LAGO RANCO Y FUTRONO, PROVINCIA DEL RANCO, REGION DE","region":"Región de Los Ríos","comuna":"Lago Ranco, Futrono","provincia":"","tipo_obra":"","etapa":"XII ETAPA","coordenadas_utm":""},"materiales_detallados":[{"codigo_mop":"7.306.4a","descripcion":"Recebo de Capas de Rodadura Granulares, Támaño Máximo 1 1/2\", Chancado al 30%","unidad":"m3","cantidad":4544.8,"precio_unitario":30.837,"subtotal":140147.9976,"categoria":"materiales"}],"mano_obra_detallada":[],"equipos_maquinaria_detallados":[],"proveedores_chile_especificos":[],"analisis_riesgos_detallado":[{"categoria":"técnico","factor":"Análisis básico - Revisión manual recomendada","probabilidad":"media","impacto":"medio","impacto_financiero":0,"mitigation":"Completar análisis con especialista","responsable":"Inspector Fiscal","timeline":"Próxima revisión","indicadores":"Análisis manual completado"}],"recomendaciones_especificas":[{"categoria":"técnica","recomendacion":"Revisar análisis manualmente","justificacion":"El análisis automático fue limitado","prioridad":"alta","timeline":"Inmediato","responsable":"Equipo técnico"}],"cronograma_detallado":{"duracion_total_meses":12,"fases":[{"fase":"Revisión manual pendiente","duracion_semanas":1,"actividades_principales":["Análisis manual del presupuesto"],"recursos_criticos":["Especialista MOP"],"dependencias":["Documentación completa"]}],"hitos_criticos":["Análisis manual completado"],"factores_estacionales":"Por determinar","ruta_critica":"Completar revisión manual"}},"metadata":{"chunksProcessed":0,"originalFileSize":775729,"processingTime":"2025-08-29T15:48:05.853995","confidence_score":40,"extraction_method":["basic_analysis"],"analysis_type":"basic_fallback"}},"metadata":{"chunksProcessed":1,"originalFileSize":0,"processingTime":"2025-08-29T15:48:05.854007","confidence_score":100,"validation_warnings":[],"validation_errors":[],"is_valid":true,"files_processed":3,"file_names":["bases1.pdf","bases2.pdf","bases3.pdf"],"total_size_bytes":38935730,"project_type":"conservacion_caminos","project_location":"Región de Los Ríos","analysis_depth":"full","analysis_type":"multiple_pdfs"},"files_summary":{"total_files":3,"files_processed":3,"files_with_budget_data":1,"total_pages":385,"total_tables":10,"total_budget_items":5}}
+{
+    "analysisId": "mop_analysis_20250829_160041_4",
+    "analysis": {
+        "analysisId": "basic_20250829_160041",
+        "analysis": {
+            "resumen_ejecutivo": "Análisis básico generado a partir de la extracción de datos. El análisis completo con IA no estuvo disponible.",
+            "presupuesto_estimado": {
+                "total_clp": 718998624.0,
+                "materials_percentage": 45,
+                "labor_percentage": 30,
+                "equipment_percentage": 25,
+                "overhead_percentage": 35
+            },
+            "proyecto_info": {
+                "nombre": "XII, COMUNAS DE LAGO RANCO Y FUTRONO, PROVINCIA DEL RANCO, REGION DE",
+                "region": "Región de Los Ríos",
+                "comuna": "Lago Ranco, Futrono",
+                "provincia": "",
+                "tipo_obra": "",
+                "etapa": "XII ETAPA",
+                "coordenadas_utm": ""
+            },
+            "materiales_detallados": [
+                {
+                    "codigo_mop": "7.306.4a",
+                    "descripcion": "Recebo de Capas de Rodadura Granulares, Támaño Máximo 1 1/2\", Chancado al 30%",
+                    "unidad": "m3",
+                    "cantidad": 4544.8,
+                    "precio_unitario": 30.837,
+                    "subtotal": 140147.9976,
+                    "categoria": "materiales"
+                }
+            ],
+            "mano_obra_detallada": [],
+            "equipos_maquinaria_detallados": [],
+            "proveedores_chile_especificos": [],
+            "analisis_riesgos_detallado": [
+                {
+                    "categoria": "técnico",
+                    "factor": "Análisis básico - Revisión manual recomendada",
+                    "probabilidad": "media",
+                    "impacto": "medio",
+                    "impacto_financiero": 0,
+                    "mitigation": "Completar análisis con especialista",
+                    "responsable": "Inspector Fiscal",
+                    "timeline": "Próxima revisión",
+                    "indicadores": "Análisis manual completado"
+                }
+            ],
+            "recomendaciones_especificas": [
+                {
+                    "categoria": "técnica",
+                    "recomendacion": "Revisar análisis manualmente",
+                    "justificacion": "El análisis automático fue limitado",
+                    "prioridad": "alta",
+                    "timeline": "Inmediato",
+                    "responsable": "Equipo técnico"
+                }
+            ],
+            "cronograma_detallado": {
+                "duracion_total_meses": 12,
+                "fases": [
+                    {
+                        "fase": "Revisión manual pendiente",
+                        "duracion_semanas": 1,
+                        "actividades_principales": [
+                            "Análisis manual del presupuesto"
+                        ],
+                        "recursos_criticos": [
+                            "Especialista MOP"
+                        ],
+                        "dependencias": [
+                            "Documentación completa"
+                        ]
+                    }
+                ],
+                "hitos_criticos": [
+                    "Análisis manual completado"
+                ],
+                "factores_estacionales": "Por determinar",
+                "ruta_critica": "Completar revisión manual"
+            }
+        },
+        "metadata": {
+            "chunksProcessed": 0,
+            "originalFileSize": 108742,
+            "processingTime": "2025-08-29T16:00:41.488426",
+            "confidence_score": 40,
+            "extraction_method": [
+                "basic_analysis"
+            ],
+            "analysis_type": "basic_fallback"
+        }
+    },
+    "metadata": {
+        "chunksProcessed": 1,
+        "originalFileSize": 0,
+        "processingTime": "2025-08-29T16:00:41.488439",
+        "confidence_score": 100,
+        "validation_warnings": [],
+        "validation_errors": [],
+        "is_valid": true,
+        "original_filename": "bases1.pdf",
+        "file_size_bytes": 12801467,
+        "project_type": "conservacion_caminos",
+        "project_location": "Región de Los Ríos",
+        "analysis_depth": "full"
+    }
+}
