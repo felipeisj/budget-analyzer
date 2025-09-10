@@ -63,3 +63,28 @@ htmlcov/
 
 # Docker
 .dockerignore
+
+# Proyectos completos (mantener solo la carpeta projects vacía)
+analysis/storage/projects/*
+!analysis/storage/projects/.gitkeep
+
+# Alternativa más específica (si prefieres ser más explícito):
+# analysis/storage/projects/*/
+
+# Storage temporal general
+storage/temp/*
+storage/processed/*
+storage/results/*
+analysis/storage/temp/*
+analysis/storage/processed/*
+analysis/storage/results/*
+
+# Mantener las carpetas pero ignorar contenido
+!storage/temp/.gitkeep
+!storage/processed/.gitkeep
+!storage/results/.gitkeep
+!analysis/storage/temp/.gitkeep
+!analysis/storage/processed/.gitkeep
+!analysis/storage/results/.gitkeep
+
+analysis/storage/projects/*/
